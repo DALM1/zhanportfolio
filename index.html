@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title data-i18n="meta.title">Zhan — Career in Europe</title>
+<meta name="description" data-i18n="meta.description" content="Portfolio" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:  '#f5f3ff',
+            100: '#ede9fe',
+            200: '#ddd6fe',
+            300: '#c4b5fd',
+            400: '#a78bfa',
+            500: '#8b5cf6',
+            600: '#7c3aed',
+            700: '#6d28d9',
+            800: '#5b21b6',
+            900: '#4c1d95',
+          }
+        },
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'Segoe UI', 'sans-serif'],
+          serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        },
+        borderRadius: {
+          cap: '9999px',
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="font-sans bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-brand-200 dark:selection:bg-brand-800">
+
+<header id="header" class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-white/75 dark:bg-slate-950/75 border-b border-slate-200/60 dark:border-slate-800/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="#home" class="flex items-baseline gap-2">
+      <span class="font-serif text-2xl font-bold tracking-tight">Zhan</span>
+      <span class="text-xs text-slate-500 dark:text-slate-400" data-i18n="nav.tagline">Career in Europe</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1">
+      <a data-nav href="#about"    class="nav-link rounded-cap px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition" data-i18n="nav.about">About</a>
+      <a data-nav href="#services" class="nav-link rounded-cap px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition" data-i18n="nav.services">Services</a>
+      <a data-nav href="#journey"  class="nav-link rounded-cap px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition" data-i18n="nav.journey">Journey</a>
+      <a data-nav href="#testimonials" class="nav-link rounded-cap px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition" data-i18n="nav.testimonials">Testimonials</a>
+      <a data-nav href="#blog"     class="nav-link rounded-cap px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition" data-i18n="nav.blog">Blog</a>
+      <a data-nav href="#contact"  class="nav-link rounded-cap px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <div class="relative">
+        <select id="langSwitcher" aria-label="Language"
+                class="appearance-none rounded-cap border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm font-medium py-2 pl-3 pr-8 focus:outline-none focus:ring-2 focus:ring-brand-500">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+          <option value="ru">RU</option>
+          <option value="kk">KZ</option>
+        </select>
+        <svg class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </div>
+      <a href="#contact" class="hidden sm:inline-flex rounded-cap bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2 transition shadow-sm hover:shadow" data-i18n="nav.cta">Book a call</a>
+      <button id="menuBtn" aria-label="Menu" class="md:hidden rounded-cap p-2 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
+    <div class="px-4 py-3 flex flex-col gap-1">
+      <a data-nav href="#about"    class="rounded-cap px-4 py-2.5 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800" data-i18n="nav.about">About</a>
+      <a data-nav href="#services" class="rounded-cap px-4 py-2.5 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800" data-i18n="nav.services">Services</a>
+      <a data-nav href="#journey"  class="rounded-cap px-4 py-2.5 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800" data-i18n="nav.journey">Journey</a>
+      <a data-nav href="#testimonials" class="rounded-cap px-4 py-2.5 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800" data-i18n="nav.testimonials">Testimonials</a>
+      <a data-nav href="#blog"     class="rounded-cap px-4 py-2.5 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800" data-i18n="nav.blog">Blog</a>
+      <a data-nav href="#contact"  class="rounded-cap px-4 py-2.5 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800" data-i18n="nav.contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="pt-16">
+
+<section id="home" class="scroll-mt-20 relative overflow-hidden">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-br from-brand-50 via-white to-white dark:from-brand-950/30 dark:via-slate-950 dark:to-slate-950"></div>
+  <div class="absolute -top-24 -right-24 -z-10 h-96 w-96 rounded-full bg-brand-200/30 dark:bg-brand-800/20 blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+        <span data-i18n="hero.title1">Your path to Europe</span><br/>
+        <span class="bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent" data-i18n="hero.title2">starts here</span>
+      </h1>
+      <p class="mt-6 flex flex-wrap gap-2 text-sm font-semibold text-slate-600 dark:text-slate-300">
+        <span data-i18n="hero.tags.admission">Admission</span><span class="text-brand-500">•</span>
+        <span data-i18n="hero.tags.internships">Internships</span><span class="text-brand-500">•</span>
+        <span data-i18n="hero.tags.jobs">Jobs</span><span class="text-brand-500">•</span>
+        <span data-i18n="hero.tags.interviews">Interviews</span>
+      </p>
+      <p class="mt-5 text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl" data-i18n="hero.desc">
+        I help students and young professionals from Kazakhstan and other countries prepare their applications, find opportunities, and build a career in Europe.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#contact" class="inline-flex items-center rounded-cap bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 shadow-sm hover:shadow-md transition" data-i18n="hero.cta">Book a consultation</a>
+        <a href="#services" class="inline-flex items-center rounded-cap border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold px-6 py-3 transition" data-i18n="hero.more">Learn more ↓</a>
+      </div>
+
+      <div class="mt-10 flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+        <span class="inline-flex items-center gap-1.5 rounded-cap border border-slate-200 dark:border-slate-800 px-3 py-1.5">
+          <span class="text-base">🇰🇿</span> <span data-i18n="hero.path.kz">Kazakhstan</span>
+        </span>
+        <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4-4 4M3 12h18"/></svg>
+        <span class="inline-flex items-center gap-1.5 rounded-cap border border-slate-200 dark:border-slate-800 px-3 py-1.5">
+          <span class="text-base">🌍</span> <span data-i18n="hero.path.eu">Europe</span>
+        </span>
+        <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4-4 4M3 12h18"/></svg>
+        <span class="inline-flex items-center gap-1.5 rounded-cap border border-slate-200 dark:border-slate-800 px-3 py-1.5">
+          <span class="text-base">🇫🇷</span> <span data-i18n="hero.path.fr">France</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="absolute -inset-4 bg-gradient-to-tr from-brand-200/50 dark:from-brand-700/30 rounded-[2rem] blur-2xl"></div>
+      <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl border border-white/40 dark:border-slate-800 bg-slate-200 dark:bg-slate-800">
+        <img src="assets/journey-1-aujordhui.jpeg" alt="Portrait Zhan" class="w-full h-full object-cover">
+      </div>
+      <div class="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl rounded-2xl p-4">
+        <div class="w-10 h-10 rounded-cap bg-brand-100 dark:bg-brand-900 text-brand-700 dark:text-brand-300 grid place-items-center">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>
+        </div>
+        <div>
+          <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="hero.floctitle">Based in</div>
+          <div class="text-sm font-semibold" data-i18n="hero.flocvalue">Paris, France</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="scroll-mt-20 py-20 lg:py-28">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-sm font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-widest" data-i18n="about.eyebrow">About me</p>
+    <h2 class="mt-3 font-serif text-3xl sm:text-4xl font-bold" data-i18n="about.title">Helping talents land in Europe since 2021</h2>
+    <p class="mt-6 text-slate-600 dark:text-slate-300 leading-relaxed text-lg" data-i18n="about.desc">
+      Erasmus Mundus alumna, ex-recruiter in a European tech scale-up, and career coach for 100+ candidates from CIS and Central Asia.
+    </p>
+  </div>
+</section>
+
+<section id="services" class="scroll-mt-20 py-20 lg:py-28 bg-slate-50 dark:bg-slate-900/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <p class="text-sm font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-widest" data-i18n="services.eyebrow">Services</p>
+      <h2 class="mt-3 font-serif text-3xl sm:text-4xl font-bold" data-i18n="services.title">My services</h2>
+      <div class="mt-4 mx-auto h-1 w-16 rounded-cap bg-brand-500"></div>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 grid place-items-center">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
+        </div>
+        <h3 class="mt-5 text-lg font-bold" data-i18n="services.c1.title">Master's admission</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="services.c1.desc">I help you shortlist programs & universities, prepare competitive documents and strategy.</p>
+        <ul class="mt-5 space-y-2 text-sm">
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c1.b1">Program & university selection</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c1.b2">Motivation letter</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c1.b3">Admission CV</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c1.b4">Application strategy</span></li>
+        </ul>
+        <a href="#contact" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-400 hover:gap-2 transition-all" data-i18n="services.learnMore">Learn more →</a>
+      </article>
+
+      <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 grid place-items-center">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="mt-5 text-lg font-bold" data-i18n="services.c2.title">CV & Motivation letter</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="services.c2.desc">We adapt your experience and strengths to the requirements of European universities & employers.</p>
+        <ul class="mt-5 space-y-2 text-sm">
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c2.b1">CV for studies & jobs</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c2.b2">Motivation letter</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c2.b3">Cover letter</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c2.b4">Editing & feedback</span></li>
+        </ul>
+        <a href="#contact" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-400 hover:gap-2 transition-all" data-i18n="services.learnMore">Learn more →</a>
+      </article>
+
+      <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 grid place-items-center">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <h3 class="mt-5 text-lg font-bold" data-i18n="services.c3.title">Interview preparation</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="services.c3.desc">We run a full mock interview, break down tricky questions and prepare your interest narrative.</p>
+        <ul class="mt-5 space-y-2 text-sm">
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c3.b1">Mock interview (60 min)</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c3.b2">Typical questions</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c3.b3">Feedback & recommendations</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c3.b4">Confidence at interview</span></li>
+        </ul>
+        <a href="#contact" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-400 hover:gap-2 transition-all" data-i18n="services.learnMore">Learn more →</a>
+      </article>
+
+      <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 grid place-items-center">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="mt-5 text-lg font-bold" data-i18n="services.c4.title">Job search in Europe</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="services.c4.desc">We build a search strategy, help with outreach and employer follow-ups.</p>
+        <ul class="mt-5 space-y-2 text-sm">
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c4.b1">Job search strategy</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c4.b2">Vacancy & company sourcing</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c4.b3">LinkedIn & networking</span></li>
+          <li class="flex gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-cap bg-brand-500 shrink-0"></span><span data-i18n="services.c4.b4">Rejection follow-ups</span></li>
+        </ul>
+        <a href="#contact" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-400 hover:gap-2 transition-all" data-i18n="services.learnMore">Learn more →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="journey" class="scroll-mt-20 py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <p class="text-sm font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-widest" data-i18n="journey.eyebrow">Background</p>
+      <h2 class="mt-3 font-serif text-3xl sm:text-4xl font-bold" data-i18n="journey.title">My journey</h2>
+      <div class="mt-4 mx-auto h-1 w-16 rounded-cap bg-brand-500"></div>
+    </div>
+
+    <div class="mt-16">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-0">
+        <div class="relative flex flex-col items-center text-center px-4 overflow-visible">
+          <div class="hidden lg:block absolute top-12 left-1/2 -right-1/2 h-px bg-slate-200 dark:bg-slate-800 -z-0"></div>
+          <div class="relative z-10 w-24 h-24 rounded-full ring-[6px] ring-white dark:ring-slate-950 shadow-lg overflow-hidden bg-slate-200 dark:bg-slate-800">
+            <img src="assets/journey-2-kazakhstan.jpeg" class="w-full h-full object-cover" alt="">
+          </div>
+          <div class="mt-4 text-sm font-bold" data-i18n="journey.s1.title">Kazakhstan</div>
+          <div class="mt-1 text-xs text-slate-500 dark:text-slate-400 max-w-[14rem]" data-i18n="journey.s1.desc">My start and education</div>
+        </div>
+        <div class="relative flex flex-col items-center text-center px-4 overflow-visible">
+          <div class="hidden lg:block absolute top-12 left-1/2 -right-1/2 h-px bg-slate-200 dark:bg-slate-800 -z-0"></div>
+          <div class="relative z-10 w-24 h-24 rounded-full ring-[6px] ring-white dark:ring-slate-950 shadow-lg overflow-hidden bg-slate-200 dark:bg-slate-800">
+            <img src="assets/journey-5-erasmus-mundus.jpeg" class="w-full h-full object-cover" alt="">
+          </div>
+          <div class="mt-4 text-sm font-bold">Erasmus Mundus</div>
+          <div class="mt-1 text-xs text-slate-500 dark:text-slate-400 max-w-[14rem]" data-i18n="journey.s2.desc">Master's in 3 European countries</div>
+        </div>
+        <div class="relative flex flex-col items-center text-center px-4 overflow-visible">
+          <div class="hidden lg:block absolute top-12 left-1/2 -right-1/2 h-px bg-slate-200 dark:bg-slate-800 -z-0"></div>
+          <div class="relative z-10 w-24 h-24 rounded-full ring-[6px] ring-white dark:ring-slate-950 shadow-lg overflow-hidden bg-slate-200 dark:bg-slate-800">
+            <img src="assets/journey-6-stages.jpeg" class="w-full h-full object-cover" alt="">
+          </div>
+          <div class="mt-4 text-sm font-bold" data-i18n="journey.s3.title">Internships</div>
+          <div class="mt-1 text-xs text-slate-500 dark:text-slate-400 max-w-[14rem]" data-i18n="journey.s3.desc">First professional projects</div>
+        </div>
+        <div class="relative flex flex-col items-center text-center px-4 overflow-visible">
+          <div class="hidden lg:block absolute top-12 left-1/2 -right-1/2 h-px bg-slate-200 dark:bg-slate-800 -z-0"></div>
+          <div class="relative z-10 w-24 h-24 rounded-full ring-[6px] ring-white dark:ring-slate-950 shadow-lg overflow-hidden bg-slate-200 dark:bg-slate-800">
+            <img src="assets/journey-4-stages-entretiens-reseau-zhenke.jpeg" class="w-full h-full object-cover" alt="">
+          </div>
+          <div class="mt-4 text-sm font-bold" data-i18n="journey.s4.title">Interviews & networking</div>
+          <div class="mt-1 text-xs text-slate-500 dark:text-slate-400 max-w-[14rem]" data-i18n="journey.s4.desc">European recruiting, conferences, connections</div>
+        </div>
+        <div class="relative flex flex-col items-center text-center px-4 overflow-visible">
+          <div class="hidden lg:block absolute top-12 left-1/2 -right-1/2 h-px bg-slate-200 dark:bg-slate-800 -z-0"></div>
+          <div class="relative z-10 w-24 h-24 rounded-full ring-[6px] ring-white dark:ring-slate-950 shadow-lg overflow-hidden bg-slate-200 dark:bg-slate-800">
+            <img src="assets/journey-3-emploi-france.jpeg" class="w-full h-full object-cover" alt="">
+          </div>
+          <div class="mt-4 text-sm font-bold" data-i18n="journey.s5.title">Job in France</div>
+          <div class="mt-1 text-xs text-slate-500 dark:text-slate-400 max-w-[14rem]" data-i18n="journey.s5.desc">My first job and life in Europe</div>
+        </div>
+        <div class="relative flex flex-col items-center text-center px-4 overflow-visible">
+          <div class="relative z-10 w-24 h-24 rounded-full ring-[6px] ring-white dark:ring-slate-950 shadow-lg overflow-hidden bg-slate-200 dark:bg-slate-800">
+            <img src="assets/hero-portrai-stages.jpeg" class="w-full h-full object-cover" alt="">
+          </div>
+          <div class="mt-4 text-sm font-bold" data-i18n="journey.s6.title">Today</div>
+          <div class="mt-1 text-xs text-slate-500 dark:text-slate-400 max-w-[14rem]" data-i18n="journey.s6.desc">Helping others achieve their goals</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 rounded-3xl border border-slate-200 dark:border-slate-800 bg-gradient-to-r from-brand-50/80 to-white dark:from-brand-950/40 dark:to-slate-900/60 p-6 sm:p-8">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 shadow grid place-items-center text-brand-600 dark:text-brand-400">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold font-serif">3+</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="journey.stats.1">years in Europe</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 shadow grid place-items-center text-brand-600 dark:text-brand-400">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold font-serif">3</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="journey.stats.2">countries of study</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 shadow grid place-items-center text-brand-600 dark:text-brand-400">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold font-serif">10+</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="journey.stats.3">interviews passed</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 shadow grid place-items-center text-brand-600 dark:text-brand-400">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold font-serif">100+</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="journey.stats.4">people helped</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="scroll-mt-20 py-20 lg:py-28 bg-slate-50 dark:bg-slate-900/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <p class="text-sm font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-widest" data-i18n="testimonials.eyebrow">Reviews</p>
+      <h2 class="mt-3 font-serif text-3xl sm:text-4xl font-bold" data-i18n="testimonials.title">What my clients say</h2>
+      <div class="mt-4 mx-auto h-1 w-16 rounded-cap bg-brand-500"></div>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-6">
+      <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
+        <svg class="w-7 h-7 text-brand-300 dark:text-brand-700" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6C4.87 6 3 7.87 3 10.17c0 2.3 1.87 4.16 4.17 4.16.83 0 1.5-.67 1.5-1.5 0-.83-.67-1.5-1.5-1.5-.3 0-.58.08-.83.25.08-1.42 1.25-2.58 2.67-2.67v-.5C8.83 6.9 8.07 6 7.17 6zm10 0c-2.3 0-4.17 1.87-4.17 4.17 0 2.3 1.87 4.16 4.17 4.16.83 0 1.5-.67 1.5-1.5 0-.83-.67-1.5-1.5-1.5-.3 0-.58.08-.83.25.08-1.42 1.25-2.58 2.67-2.67v-.5c0-.9-.76-1.91-1.67-1.91z"/></svg>
+        <blockquote class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="testimonials.t1.text">Zhan helped me choose a Master's program in France and write my motivation letter. Thanks to her support I got admitted!</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <img src="https://i.pravatar.cc/80?img=47" alt="" class="w-10 h-10 rounded-full object-cover"/>
+          <div>
+            <div class="text-sm font-semibold">Dina, <span data-i18n="testimonials.t1.from">Kazakhstan</span></div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
+        <svg class="w-7 h-7 text-brand-300 dark:text-brand-700" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6C4.87 6 3 7.87 3 10.17c0 2.3 1.87 4.16 4.17 4.16.83 0 1.5-.67 1.5-1.5 0-.83-.67-1.5-1.5-1.5-.3 0-.58.08-.83.25.08-1.42 1.25-2.58 2.67-2.67v-.5C8.83 6.9 8.07 6 7.17 6zm10 0c-2.3 0-4.17 1.87-4.17 4.17 0 2.3 1.87 4.16 4.17 4.16.83 0 1.5-.67 1.5-1.5 0-.83-.67-1.5-1.5-1.5-.3 0-.58.08-.83.25.08-1.42 1.25-2.58 2.67-2.67v-.5c0-.9-.76-1.91-1.67-1.91z"/></svg>
+        <blockquote class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="testimonials.t2.text">The mock interview was very helpful! I became much more confident and got the offer at my dream company.</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <img src="https://i.pravatar.cc/80?img=32" alt="" class="w-10 h-10 rounded-full object-cover"/>
+          <div>
+            <div class="text-sm font-semibold">Zhannur, <span data-i18n="testimonials.t2.from">Kazakhstan</span></div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
+        <svg class="w-7 h-7 text-brand-300 dark:text-brand-700" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6C4.87 6 3 7.87 3 10.17c0 2.3 1.87 4.16 4.17 4.16.83 0 1.5-.67 1.5-1.5 0-.83-.67-1.5-1.5-1.5-.3 0-.58.08-.83.25.08-1.42 1.25-2.58 2.67-2.67v-.5C8.83 6.9 8.07 6 7.17 6zm10 0c-2.3 0-4.17 1.87-4.17 4.17 0 2.3 1.87 4.16 4.17 4.16.83 0 1.5-.67 1.5-1.5 0-.83-.67-1.5-1.5-1.5-.3 0-.58.08-.83.25.08-1.42 1.25-2.58 2.67-2.67v-.5c0-.9-.76-1.91-1.67-1.91z"/></svg>
+        <blockquote class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="testimonials.t3.text">Very useful consultation on job search in Europe. I appreciated the clear plan and practical tips.</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <img src="https://i.pravatar.cc/80?img=49" alt="" class="w-10 h-10 rounded-full object-cover"/>
+          <div>
+            <div class="text-sm font-semibold">Maria, <span data-i18n="testimonials.t3.from">Russia</span></div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="blog" class="scroll-mt-20 py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <p class="text-sm font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-widest" data-i18n="blog.eyebrow">Resources</p>
+        <h2 class="mt-3 font-serif text-3xl sm:text-4xl font-bold" data-i18n="blog.title">Blog & free resources</h2>
+      </div>
+      <a href="#contact" class="hidden sm:inline-flex text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline" data-i18n="blog.viewAll">View all →</a>
+    </div>
+    <div class="mt-4 mx-auto h-1 w-16 rounded-cap bg-brand-500 sm:mx-0"></div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 hover:shadow-lg transition">
+        <div class="aspect-video bg-slate-100 dark:bg-slate-800">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-brand-600 dark:text-brand-400 font-semibold uppercase tracking-widest" data-i18n="blog.c1.tag">Admission</div>
+          <h3 class="mt-2 font-bold leading-snug" data-i18n="blog.c1.title">How I won an Erasmus Mundus scholarship</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="blog.c1.excerpt">Timeline, budget, and the 3 mistakes I avoided to get fully funded.</p>
+          <div class="mt-4 text-xs text-slate-400">7 min read</div>
+        </div>
+      </article>
+
+      <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 hover:shadow-lg transition">
+        <div class="aspect-video bg-slate-100 dark:bg-slate-800">
+          <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600&q=80&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-brand-600 dark:text-brand-400 font-semibold uppercase tracking-widest" data-i18n="blog.c2.tag">CV</div>
+          <h3 class="mt-2 font-bold leading-snug" data-i18n="blog.c2.title">The European CV format that passes ATS</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="blog.c2.excerpt">Template + 12 phrases to replace the generic ones in your CV.</p>
+          <div class="mt-4 text-xs text-slate-400">5 min read</div>
+        </div>
+      </article>
+
+      <article class="group rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 hover:shadow-lg transition">
+        <div class="aspect-video bg-slate-100 dark:bg-slate-800">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
+        </div>
+        <div class="p-5">
+          <div class="text-xs text-brand-600 dark:text-brand-400 font-semibold uppercase tracking-widest" data-i18n="blog.c3.tag">Job search</div>
+          <h3 class="mt-2 font-bold leading-snug" data-i18n="blog.c3.title">Cold-email templates that actually get replies</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="blog.c3.excerpt">Copy-paste 3 templates I used to land interviews at French startups.</p>
+          <div class="mt-4 text-xs text-slate-400">6 min read</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="scroll-mt-20 py-20 lg:py-28 bg-gradient-to-br from-brand-600 via-brand-700 to-brand-900 text-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold" data-i18n="contact.title">Ready to start your European journey?</h2>
+    <p class="mt-4 text-white/80 text-lg max-w-2xl mx-auto" data-i18n="contact.desc">Book a free 20-minute discovery call. We'll assess your goals and pick the best service package.</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="mailto:sat.zhanerke01@gmail.com" class="inline-flex items-center rounded-cap bg-white text-brand-700 font-bold px-6 py-3 hover:bg-brand-50 shadow hover:shadow-md transition" data-i18n="contact.cta">Book a consultation</a>
+      <a href="https://t.me/how_to_find_a_neutral_username" target="_blank" rel="noreferrer" class="inline-flex items-center rounded-cap border border-white/30 hover:bg-white/10 font-semibold px-6 py-3 transition" data-i18n="contact.telegram">Telegram →</a>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-3 gap-6 text-sm">
+      <a href="mailto:sat.zhanerke01@gmail.com" class="rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 p-5 text-left transition">
+        <div class="text-xs uppercase tracking-widest text-white/70">Email</div>
+        <div class="mt-1 font-semibold">sat.zhanerke01@gmail.com</div>
+      </a>
+      <a href="https://linkedin.com/in/zhan" target="_blank" rel="noreferrer" class="rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 p-5 text-left transition">
+        <div class="text-xs uppercase tracking-widest text-white/70">LinkedIn</div>
+        <div class="mt-1 font-semibold">/in/zhan</div>
+      </a>
+      <a href="https://t.me/how_to_find_a_neutral_username" target="_blank" rel="noreferrer" class="rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 p-5 text-left transition">
+        <div class="text-xs uppercase tracking-widest text-white/70">Telegram</div>
+        <div class="mt-1 font-semibold">@how_to_find_a_neutral_username</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-slate-200 dark:border-slate-800 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500 dark:text-slate-400">
+    <div>© <span id="year"></span> Zhan · <span data-i18n="footer.rights">All rights reserved</span></div>
+    <div class="flex items-center gap-5">
+      <a href="#home" data-i18n="footer.privacy" class="hover:text-slate-900 dark:hover:text-white transition">Privacy</a>
+      <a href="#home" data-i18n="footer.terms" class="hover:text-slate-900 dark:hover:text-white transition">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Top" class="fixed bottom-6 right-6 z-40 opacity-0 translate-y-4 pointer-events-none transition-all duration-300 w-12 h-12 rounded-cap bg-white dark:bg-slate-800 shadow-lg border border-slate-200 dark:border-slate-700 hover:bg-brand-50 dark:hover:bg-slate-700 grid place-items-center">
+  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<script src="js/i18n.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
