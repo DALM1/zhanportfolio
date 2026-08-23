@@ -1,8 +1,8 @@
 window.I18N = {
   en: {
-    'meta.title': 'Zhan — Career in Europe',
-    'meta.description': 'Helping students and young professionals build a career in Europe — admissions, CVs, interviews, job search.',
-    'nav.tagline': 'Career in Europe',
+    'meta.title': 'Zhan — Career around the world',
+    'meta.description': 'Helping students and young professionals build a career around the world — admissions, CVs, interviews, job search.',
+    'nav.tagline': 'Career around the world',
     'nav.about': 'About',
     'nav.services': 'Services',
     'nav.journey': 'Journey',
