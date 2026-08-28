@@ -40,3 +40,6 @@ html { scroll-padding-top: 80px; }
 #home > div > div:first-child > *:nth-child(4) { animation-delay: 0.24s; }
 #home > div > div:first-child > *:nth-child(5) { animation-delay: 0.30s; }
 #home > div > div:first-child > *:nth-child(6) { animation-delay: 0.36s; }
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
