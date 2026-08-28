@@ -94,8 +94,8 @@
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
     <div>
-      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
-        <span data-i18n="hero.title1">Your path to Europe</span><br/>
+      <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight break-words max-w-full">
+        <span data-i18n="hero.title1">Your path to Europe</span><br class="sm:hidden">
         <span class="bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent" data-i18n="hero.title2">starts here</span>
       </h1>
       <p class="mt-6 flex flex-wrap gap-2 text-sm font-semibold text-slate-600 dark:text-slate-300">
@@ -112,17 +112,17 @@
         <a href="#services" class="inline-flex items-center rounded-cap border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold px-6 py-3 transition" data-i18n="hero.more">Learn more ↓</a>
       </div>
 
-      <div class="mt-10 flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
-        <span class="inline-flex items-center gap-1.5 rounded-cap border border-slate-200 dark:border-slate-800 px-3 py-1.5">
-          <span class="text-base">🇰🇿</span> <span data-i18n="hero.path.kz">Kazakhstan</span>
+      <div class="mt-10 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-slate-600 dark:text-slate-300">
+        <span class="inline-flex items-center gap-1.5 rounded-cap border border-slate-200 dark:border-slate-800 px-2.5 sm:px-3 py-1 sm:py-1.5">
+          <span class="text-base shrink-0">🇰🇿</span> <span data-i18n="hero.path.kz">Kazakhstan</span>
         </span>
-        <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4-4 4M3 12h18"/></svg>
-        <span class="inline-flex items-center gap-1.5 rounded-cap border border-slate-200 dark:border-slate-800 px-3 py-1.5">
-          <span class="text-base">🌍</span> <span data-i18n="hero.path.eu">Europe</span>
+        <svg class="w-5 h-5 text-brand-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4-4 4M3 12h18"/></svg>
+        <span class="inline-flex items-center gap-1.5 rounded-cap border border-slate-200 dark:border-slate-800 px-2.5 sm:px-3 py-1 sm:py-1.5">
+          <span class="text-base shrink-0">🌍</span> <span data-i18n="hero.path.eu">Europe</span>
         </span>
-        <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4-4 4M3 12h18"/></svg>
-        <span class="inline-flex items-center gap-1.5 rounded-cap border border-slate-200 dark:border-slate-800 px-3 py-1.5">
-          <span class="text-base">🇫🇷</span> <span data-i18n="hero.path.fr">France</span>
+        <svg class="w-5 h-5 text-brand-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4-4 4M3 12h18"/></svg>
+        <span class="inline-flex items-center gap-1.5 rounded-cap border border-slate-200 dark:border-slate-800 px-2.5 sm:px-3 py-1 sm:py-1.5">
+          <span class="text-base shrink-0">🇫🇷</span> <span data-i18n="hero.path.fr">France</span>
         </span>
       </div>
     </div>
@@ -148,10 +148,13 @@
 <section id="about" class="scroll-mt-20 py-20 lg:py-28">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <p class="text-sm font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-widest" data-i18n="about.eyebrow">About me</p>
-    <h2 class="mt-3 font-serif text-3xl sm:text-4xl font-bold" data-i18n="about.title">Helping talents land in Europe since 2021</h2>
-    <p class="mt-6 text-slate-600 dark:text-slate-300 leading-relaxed text-lg" data-i18n="about.desc">
-      Erasmus Mundus alumna, ex-recruiter in a European tech scale-up, and career coach for 100+ candidates from CIS and Central Asia.
-    </p>
+    <h2 class="mt-3 font-serif text-3xl sm:text-4xl font-bold" data-i18n="about.title">Helping talents land in Europe</h2>
+    <div class="mt-6 text-slate-600 dark:text-slate-300 leading-relaxed text-lg space-y-4">
+      <p data-i18n="about.desc1">Erasmus Mundus alumna, ex-recruiter in a European tech scale-up, and career coach for 100+ candidates from CIS and Central Asia.</p>
+      <p data-i18n="about.desc2"></p>
+      <p data-i18n="about.desc3"></p>
+      <p data-i18n="about.desc4"></p>
+    </div>
   </div>
 </section>
 
